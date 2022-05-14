@@ -8,12 +8,9 @@ namespace Crud.Api.FluentValidator
 
         public CustomerValidator()
         {
-            RuleFor(x=>x.Name).NotNull().Empty();
-            RuleFor(x => x.LastName).NotNull().Empty();
-            RuleFor(x => x.Email).NotNull().EmailAddress().Empty();
+            RuleFor(x=>x.Name).NotNull().NotEmpty();
+            RuleFor(x => x.LastName).NotNull().NotEmpty();
+            RuleFor(x => x.Email).NotNull().EmailAddress().NotEmpty();
         }
-
-
-
     }
 }

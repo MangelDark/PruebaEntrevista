@@ -24,7 +24,7 @@ namespace Service.Layer.CustomerService
 
         public Customer GetCustomer(int id)
         {
-            return _repository.GetById(id);
+            return _repository.Get(id);
         }
 
         public void InsertCustomer(Customer customer)
@@ -38,8 +38,8 @@ namespace Service.Layer.CustomerService
         }
         public void DeleteCustomer(int id)
         {
-            Customer customer = _repository.GetById(id);
-            _repository.Remove(customer);
+            Customer customer = _repository.Get(id);
+            _repository.Delete(customer);
             _repository.SaveChanges();
         }
 

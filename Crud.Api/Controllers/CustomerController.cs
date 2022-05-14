@@ -1,6 +1,7 @@
 ﻿using Domain.Layer.Models;
 using Microsoft.AspNetCore.Mvc;
 using Service.Layer.CustomerService;
+using System;
 using System.Collections.Generic;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -54,24 +55,43 @@ namespace Crud.Api.Controllers
         [HttpPost(nameof(Insert))]
         public IActionResult Insert([FromBody] Customer entity)
         {
-            if (!ModelState.IsValid)
+            try
             {
-                return BadRequest(ModelState);
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest(ModelState);
+                }
+                service.InsertCustomer(entity);
+                return Ok("Data Inserted.");
+
             }
-            service.InsertCustomer(entity);
-            return Ok("Data Inserted.");
+            catch (Exception ex)
+            {
+
+                return BadRequest(ex.Message);
+            }
+          
         }
 
         // PUT api/<CustomerController>/5
         [HttpPut(nameof(Update))]
         public IActionResult Update([FromBody] Customer entity)
         {
-            if (!ModelState.IsValid)
+            try
             {
-                return BadRequest(ModelState);
-            }
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest(ModelState);
+                }
                 service.UpdateCustomer(entity);
                 return Ok("Data updated.");
+            }
+            catch (Exception e)
+            {
+
+                return BadRequest(e.Message);
+            }
+          
              
         }
 
@@ -79,9 +99,18 @@ namespace Crud.Api.Controllers
         [HttpDelete(nameof(Delete))]
         public IActionResult Delete(int id)
         {
-           
+            try
+            {
+
                 service.DeleteCustomer(id);
                 return Ok("Data deleted");
+            }
+            catch (Exception e)
+            {
+
+                return BadRequest(e.Message);
+            }
+           
           
         }
     }

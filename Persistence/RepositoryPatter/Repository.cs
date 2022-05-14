@@ -25,14 +25,21 @@ namespace Persistence.Layer.RepositoryPatter
         {
             if (entity == null)
             {
-                throw new ArgumentNullException("entity");
+                throw new Exception("No record found.");
             }
             entities.Remove(entity);
             applicationDbContext.SaveChanges();
-
+        }
+        public void Remove(T entity)
+        {
+            if (entity == null)
+            {
+                throw new Exception("No record found.");
+            }
+            throw new NotImplementedException();
         }
 
-        public T GetById(int id)
+        public T Get(int id)
         {
             return entities.SingleOrDefault(x => x.Id == id);
         }
@@ -46,20 +53,13 @@ namespace Persistence.Layer.RepositoryPatter
         {
             if (entity == null)
             {
-                throw new ArgumentNullException("entity");
+                throw new Exception("Entity not can be null");
             }
             entities.Add(entity);
             applicationDbContext.SaveChanges();
         }
 
-        public void Remove(T entity)
-        {
-            if (entity == null)
-            {
-                throw new ArgumentNullException("entity");
-            }
-            throw new NotImplementedException();
-        }
+      
 
         public void SaveChanges()
         {
@@ -70,7 +70,7 @@ namespace Persistence.Layer.RepositoryPatter
         {
             if (entity == null)
             {
-                throw new ArgumentNullException("entity");
+                throw new Exception("Entity not can be null");
 
             }
             entities.Update(entity);
