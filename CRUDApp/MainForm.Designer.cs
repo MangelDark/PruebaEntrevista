@@ -36,21 +36,21 @@
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtId = new System.Windows.Forms.TextBox();
             this.panelNavBar = new System.Windows.Forms.Panel();
+            this.btnMinimize = new System.Windows.Forms.PictureBox();
+            this.btnClosed = new System.Windows.Forms.PictureBox();
             this.panelForm = new System.Windows.Forms.Panel();
+            this.lbErrorEmail = new System.Windows.Forms.Label();
+            this.lbErrorLastName = new System.Windows.Forms.Label();
+            this.lbErrorName = new System.Windows.Forms.Label();
+            this.btnSaveOrUpdate = new System.Windows.Forms.Button();
             this.btnInsert = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnClosed = new System.Windows.Forms.PictureBox();
-            this.btnMinimize = new System.Windows.Forms.PictureBox();
-            this.btnSaveOrUpdate = new System.Windows.Forms.Button();
             this.dtgCustomers = new System.Windows.Forms.DataGridView();
-            this.lbErrorName = new System.Windows.Forms.Label();
-            this.lbErrorLastName = new System.Windows.Forms.Label();
-            this.lbErrorEmail = new System.Windows.Forms.Label();
             this.panelNavBar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnClosed)).BeginInit();
             this.panelForm.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnClosed)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgCustomers)).BeginInit();
             this.SuspendLayout();
             // 
@@ -148,6 +148,28 @@
             this.panelNavBar.TabIndex = 15;
             this.panelNavBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelNavBar_MouseDown);
             // 
+            // btnMinimize
+            // 
+            this.btnMinimize.Image = global::CRUDApp.Properties.Resources.Minimize_Icon;
+            this.btnMinimize.Location = new System.Drawing.Point(571, 4);
+            this.btnMinimize.Name = "btnMinimize";
+            this.btnMinimize.Size = new System.Drawing.Size(16, 16);
+            this.btnMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.btnMinimize.TabIndex = 1;
+            this.btnMinimize.TabStop = false;
+            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click_1);
+            // 
+            // btnClosed
+            // 
+            this.btnClosed.Image = global::CRUDApp.Properties.Resources.Close_Icon;
+            this.btnClosed.Location = new System.Drawing.Point(595, 4);
+            this.btnClosed.Name = "btnClosed";
+            this.btnClosed.Size = new System.Drawing.Size(16, 16);
+            this.btnClosed.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.btnClosed.TabIndex = 0;
+            this.btnClosed.TabStop = false;
+            this.btnClosed.Click += new System.EventHandler(this.btnClosed_Click);
+            // 
             // panelForm
             // 
             this.panelForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(63)))), ((int)(((byte)(105)))));
@@ -168,6 +190,57 @@
             this.panelForm.Name = "panelForm";
             this.panelForm.Size = new System.Drawing.Size(614, 194);
             this.panelForm.TabIndex = 16;
+            // 
+            // lbErrorEmail
+            // 
+            this.lbErrorEmail.AutoSize = true;
+            this.lbErrorEmail.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbErrorEmail.ForeColor = System.Drawing.Color.Red;
+            this.lbErrorEmail.Location = new System.Drawing.Point(83, 121);
+            this.lbErrorEmail.Name = "lbErrorEmail";
+            this.lbErrorEmail.Size = new System.Drawing.Size(79, 13);
+            this.lbErrorEmail.TabIndex = 16;
+            this.lbErrorEmail.Text = "ValidatorEmail";
+            this.lbErrorEmail.Visible = false;
+            // 
+            // lbErrorLastName
+            // 
+            this.lbErrorLastName.AutoSize = true;
+            this.lbErrorLastName.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbErrorLastName.ForeColor = System.Drawing.Color.Red;
+            this.lbErrorLastName.Location = new System.Drawing.Point(376, 65);
+            this.lbErrorLastName.Name = "lbErrorLastName";
+            this.lbErrorLastName.Size = new System.Drawing.Size(101, 13);
+            this.lbErrorLastName.TabIndex = 15;
+            this.lbErrorLastName.Text = "ValidatorLastName";
+            this.lbErrorLastName.Visible = false;
+            // 
+            // lbErrorName
+            // 
+            this.lbErrorName.AutoSize = true;
+            this.lbErrorName.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbErrorName.ForeColor = System.Drawing.Color.Red;
+            this.lbErrorName.Location = new System.Drawing.Point(83, 65);
+            this.lbErrorName.Name = "lbErrorName";
+            this.lbErrorName.Size = new System.Drawing.Size(81, 13);
+            this.lbErrorName.TabIndex = 14;
+            this.lbErrorName.Text = "ValidatorName";
+            this.lbErrorName.Visible = false;
+            // 
+            // btnSaveOrUpdate
+            // 
+            this.btnSaveOrUpdate.BackColor = System.Drawing.Color.ForestGreen;
+            this.btnSaveOrUpdate.FlatAppearance.BorderSize = 0;
+            this.btnSaveOrUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSaveOrUpdate.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveOrUpdate.ForeColor = System.Drawing.Color.White;
+            this.btnSaveOrUpdate.Location = new System.Drawing.Point(479, 150);
+            this.btnSaveOrUpdate.Name = "btnSaveOrUpdate";
+            this.btnSaveOrUpdate.Size = new System.Drawing.Size(123, 38);
+            this.btnSaveOrUpdate.TabIndex = 3;
+            this.btnSaveOrUpdate.Text = "Save";
+            this.btnSaveOrUpdate.UseVisualStyleBackColor = false;
+            this.btnSaveOrUpdate.Click += new System.EventHandler(this.btnSaveOrUpdate_Click);
             // 
             // btnInsert
             // 
@@ -193,42 +266,6 @@
             this.panel1.Size = new System.Drawing.Size(614, 231);
             this.panel1.TabIndex = 17;
             // 
-            // btnClosed
-            // 
-            this.btnClosed.Image = global::CRUDApp.Properties.Resources.Close_Icon;
-            this.btnClosed.Location = new System.Drawing.Point(595, 4);
-            this.btnClosed.Name = "btnClosed";
-            this.btnClosed.Size = new System.Drawing.Size(16, 16);
-            this.btnClosed.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.btnClosed.TabIndex = 0;
-            this.btnClosed.TabStop = false;
-            this.btnClosed.Click += new System.EventHandler(this.btnClosed_Click);
-            // 
-            // btnMinimize
-            // 
-            this.btnMinimize.Image = global::CRUDApp.Properties.Resources.Minimize_Icon;
-            this.btnMinimize.Location = new System.Drawing.Point(571, 4);
-            this.btnMinimize.Name = "btnMinimize";
-            this.btnMinimize.Size = new System.Drawing.Size(16, 16);
-            this.btnMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.btnMinimize.TabIndex = 1;
-            this.btnMinimize.TabStop = false;
-            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click_1);
-            // 
-            // btnSaveOrUpdate
-            // 
-            this.btnSaveOrUpdate.BackColor = System.Drawing.Color.ForestGreen;
-            this.btnSaveOrUpdate.FlatAppearance.BorderSize = 0;
-            this.btnSaveOrUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSaveOrUpdate.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveOrUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnSaveOrUpdate.Location = new System.Drawing.Point(479, 150);
-            this.btnSaveOrUpdate.Name = "btnSaveOrUpdate";
-            this.btnSaveOrUpdate.Size = new System.Drawing.Size(123, 38);
-            this.btnSaveOrUpdate.TabIndex = 3;
-            this.btnSaveOrUpdate.Text = "Save";
-            this.btnSaveOrUpdate.UseVisualStyleBackColor = false;
-            // 
             // dtgCustomers
             // 
             this.dtgCustomers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -237,42 +274,6 @@
             this.dtgCustomers.Name = "dtgCustomers";
             this.dtgCustomers.Size = new System.Drawing.Size(614, 231);
             this.dtgCustomers.TabIndex = 0;
-            // 
-            // lbErrorName
-            // 
-            this.lbErrorName.AutoSize = true;
-            this.lbErrorName.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbErrorName.ForeColor = System.Drawing.Color.Red;
-            this.lbErrorName.Location = new System.Drawing.Point(83, 65);
-            this.lbErrorName.Name = "lbErrorName";
-            this.lbErrorName.Size = new System.Drawing.Size(81, 13);
-            this.lbErrorName.TabIndex = 14;
-            this.lbErrorName.Text = "ValidatorName";
-            this.lbErrorName.Visible = false;
-            // 
-            // lbErrorLastName
-            // 
-            this.lbErrorLastName.AutoSize = true;
-            this.lbErrorLastName.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbErrorLastName.ForeColor = System.Drawing.Color.Red;
-            this.lbErrorLastName.Location = new System.Drawing.Point(376, 65);
-            this.lbErrorLastName.Name = "lbErrorLastName";
-            this.lbErrorLastName.Size = new System.Drawing.Size(101, 13);
-            this.lbErrorLastName.TabIndex = 15;
-            this.lbErrorLastName.Text = "ValidatorLastName";
-            this.lbErrorLastName.Visible = false;
-            // 
-            // lbErrorEmail
-            // 
-            this.lbErrorEmail.AutoSize = true;
-            this.lbErrorEmail.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbErrorEmail.ForeColor = System.Drawing.Color.Red;
-            this.lbErrorEmail.Location = new System.Drawing.Point(83, 121);
-            this.lbErrorEmail.Name = "lbErrorEmail";
-            this.lbErrorEmail.Size = new System.Drawing.Size(79, 13);
-            this.lbErrorEmail.TabIndex = 16;
-            this.lbErrorEmail.Text = "ValidatorEmail";
-            this.lbErrorEmail.Visible = false;
             // 
             // MainForm
             // 
@@ -289,11 +290,11 @@
             this.Text = "Form1";
             this.panelNavBar.ResumeLayout(false);
             this.panelNavBar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnClosed)).EndInit();
             this.panelForm.ResumeLayout(false);
             this.panelForm.PerformLayout();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btnClosed)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgCustomers)).EndInit();
             this.ResumeLayout(false);
 

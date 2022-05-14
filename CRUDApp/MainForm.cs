@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using RestSharp;
+using System.Threading;
 
 namespace CRUDApp
 {
@@ -27,7 +29,22 @@ namespace CRUDApp
         {
 
         }
+       
 
+        private  async Task<bool> Peticion()
+        {
+           
+            var client = new RestClient("https://localhost:44336/api/");
+            var request = new RestRequest("Customer/GetAll");
+            var response = await client.GetAsync(request);
+            if (response.Content == "[]")
+            {
+                MessageBox.Show("La peticion fue correcta");
+                return true;
+            }
+            MessageBox.Show("La peticion fallo");
+            return false;
+        }
         private void txtName_Enter(object sender, EventArgs e)
         {
             if(txtName.Text == "Name")
@@ -116,6 +133,11 @@ namespace CRUDApp
                 txtEmail.Text = "Email";
                 txtEmail.ForeColor = Color.Silver;
             }
+        }
+
+        private void btnSaveOrUpdate_Click(object sender, EventArgs e)
+        {
+            Peticion();
         }
     }
 }
