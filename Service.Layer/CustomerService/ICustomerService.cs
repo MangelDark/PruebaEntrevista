@@ -12,6 +12,7 @@ namespace Service.Layer.CustomerService
     {
         IEnumerable<Customer> GetAllCustomer();
         Customer GetCustomer(int id);
+        bool EmailExist(string email);
         void InsertCustomer(Customer customer);
         void UpdateCustomer(Customer customer);
         void DeleteCustomer(int id);

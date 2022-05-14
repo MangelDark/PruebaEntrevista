@@ -17,6 +17,6 @@ namespace Persistence.Layer.RepositoryPatter
         void Delete(T entity);
         void Remove(T entoty);
         void SaveChanges();
-
+        
     }
 }

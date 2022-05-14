@@ -43,5 +43,14 @@ namespace Service.Layer.CustomerService
             _repository.SaveChanges();
         }
 
+        public bool EmailExist(string email)
+        {
+            var result = _repository.GetAll().Where(x => x.Email == email).SingleOrDefault();
+            if (result is not null)
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }

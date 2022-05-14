@@ -1,3 +1,7 @@
+using Crud.Api.FluentValidator;
+using Domain.Layer.Models;
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -9,6 +13,8 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using Persistence.Layer._DbContext;
+using Persistence.Layer.RepositoryPatter;
+using Service.Layer.CustomerService;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,6 +34,14 @@ namespace Crud.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+            services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+            services.AddTransient<ICustomerService,CustomerService>();
+            services.AddTransient<IValidator<Customer>, CustomerValidator>();
+            services.AddMvc(setup =>
+            {
+
+            }).AddFluentValidation();
             //connectionString
             services.AddDbContext<ApplicationDbContext>(x =>
             {
