@@ -31,7 +31,7 @@ namespace Crud.Api
             //connectionString
             services.AddDbContext<ApplicationDbContext>(x =>
             {
-                x.UseSqlServer(Configuration.GetConnectionString("myconn"));
+                x.UseSqlServer(Configuration.GetConnectionString("myconnLaptop"));
             });
 
             services.AddControllers();
