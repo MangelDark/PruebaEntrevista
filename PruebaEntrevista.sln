@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service.Layer", "Service.La
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistence.Layer", "Persistence\Persistence.Layer.csproj", "{DF44F8DC-C772-4235-B5DE-83D554372A30}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentacion", "Presentacion", "{0A1EA9B9-8083-42C7-AB33-FAE4110DF8E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CRUDApp", "CRUDApp\CRUDApp.csproj", "{B3A012CE-C582-4BA3-98F4-D9C943F320E9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +39,10 @@ Global
 		{DF44F8DC-C772-4235-B5DE-83D554372A30}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DF44F8DC-C772-4235-B5DE-83D554372A30}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DF44F8DC-C772-4235-B5DE-83D554372A30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3A012CE-C582-4BA3-98F4-D9C943F320E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3A012CE-C582-4BA3-98F4-D9C943F320E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3A012CE-C582-4BA3-98F4-D9C943F320E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3A012CE-C582-4BA3-98F4-D9C943F320E9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -44,6 +52,7 @@ Global
 		{3B7405BE-383D-41BD-98E1-2EC8B11A21C1} = {2726A9F4-DF47-4EF5-97A9-C5AB5AF12C8D}
 		{F11FC887-3868-4759-B0C3-11BFD104E8A2} = {2726A9F4-DF47-4EF5-97A9-C5AB5AF12C8D}
 		{DF44F8DC-C772-4235-B5DE-83D554372A30} = {2726A9F4-DF47-4EF5-97A9-C5AB5AF12C8D}
+		{B3A012CE-C582-4BA3-98F4-D9C943F320E9} = {0A1EA9B9-8083-42C7-AB33-FAE4110DF8E5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1747E864-3639-4EBE-B18D-419618D91F26}
