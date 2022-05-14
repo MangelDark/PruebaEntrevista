@@ -18,14 +18,14 @@ namespace Domain.Layer.EntityMapper
             builder.HasKey(x => x.Id).HasName("pk_customerid");
             builder.Property(x => x.Id).ValueGeneratedOnAdd().HasColumnName("Id").HasColumnType("int");
 
-            builder.Property(x => x.Name).HasColumnName("Name").HasColumnType("nvarchar(200)").IsRequired(true);
-            builder.Property(x => x.LastName).HasColumnName("LastName").HasColumnType("nvarchar(250)").IsRequired(true);
-            builder.Property(x => x.Email).HasColumnName("").HasColumnType("nvarchar(200)").IsRequired(true);
+            builder.Property(x => x.Name).HasColumnName("Name").HasColumnType("nvarchar(200)").IsRequired();
+            builder.Property(x => x.LastName).HasColumnName("LastName").HasColumnType("nvarchar(250)").IsRequired();
+            builder.Property(x => x.Email).HasColumnName("Email").HasColumnType("nvarchar(200)").IsRequired();
 
 
             builder.Property(x => x.Created).HasColumnName("Created_date").HasColumnType("datetime");
             builder.Property(x => x.Modified).HasColumnName("Modified_date").HasColumnType("datetime");
-            builder.Property(x => x.IsActive).HasColumnName("IsActive").HasColumnType("bool");
+            builder.Property(x => x.IsActive).HasColumnName("IsActive").HasColumnType("bit");
 
 
         }
