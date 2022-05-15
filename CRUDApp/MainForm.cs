@@ -51,29 +51,38 @@ namespace CRUDApp
 
         private async Task<string>  PostRequest()
         {
-            var customer = new Customer
+            try
             {
-                Name = txtName.Text,
-                LastName = txtLastName.Text,
-                Email = txtEmail.Text,  
-                Created = DateTime.Now,
-                Modified = DateTime.Now,    
-                IsActive = true,
-            };
-            var exist = await EmailExist(customer.Email);
-            if (!exist)
-            {
-                var client = new RestClient("https://localhost:44336/api/");
-                var request = new RestRequest("Customer/Insert");
-                request.AddBody(customer);
-                var response = await client.PostAsync(request);
+                var customer = new Customer
+                {
+                    Name = txtName.Text,
+                    LastName = txtLastName.Text,
+                    Email = txtEmail.Text,
+                    Created = DateTime.Now,
+                    Modified = DateTime.Now,
+                    IsActive = true,
+                };
+                var exist = await EmailExist(customer.Email);
+                if (!exist)
+                {
+                    var client = new RestClient("https://localhost:44336/api/");
+                    var request = new RestRequest("Customer/Insert");
+                    request.AddBody(customer);
+                    var response = await client.PostAsync(request);
 
-                return response.Content;
+                    return response.Content;
+                }
+
+                return "The email exist";
+
+            }
+            catch (Exception ex)
+            {
+
+                return "The email format is not valid";
             }
 
-            return "The email exist";
 
-           
         }
 
    
@@ -101,7 +110,7 @@ namespace CRUDApp
             catch (Exception ex)
             {
 
-                return ex.Message;
+                return "The email format is not valid";
             }
          
         }
@@ -242,13 +251,23 @@ namespace CRUDApp
                 }
                 else
                 {
-                    if (txtId.Text == "")
+                    if (txtId.Text == "0")
                     {
 
                         var result = await PostRequest();
                         MessageBox.Show(result);
-                        ClearTextBox();
-                        cargarGrid();
+                        if (result == "The email exist" || result == "The email format is not valid")
+                        {
+                            lbErrorEmail.Text = result;
+                            lbErrorEmail.Visible= true;
+                        }
+                        else
+                        {
+                            ClearTextBox();
+                            cargarGrid();
+                            lbErrorEmail.Visible = false;
+                        }
+                       
 
                     }
                     else
@@ -311,7 +330,7 @@ namespace CRUDApp
      
         private void ClearTextBox()
         {
-            txtId.Text = "";
+            txtId.Text = "0";
             txtEmail.Text = "Email";
             txtName.Text = "";
             txtName.Focus();
@@ -324,10 +343,21 @@ namespace CRUDApp
 
         private async void btnDel_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32( txtId.Text);
-            await DeleteRequest(id);
-            ClearTextBox();
-            cargarGrid();
+            int id = Convert.ToInt32(txtId.Text);
+            if (id > 0 )
+            {
+                await DeleteRequest(id);
+                ClearTextBox();
+                cargarGrid();
+            }
+            else
+            {
+                MessageBox.Show("Select de customer", "Information", MessageBoxButtons.OK);
+                ClearTextBox();
+                cargarGrid();
+            }
+            
+           
         }
 
         private void btnClean_Click(object sender, EventArgs e)
