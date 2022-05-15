@@ -40,6 +40,7 @@
             this.btnMinimize = new System.Windows.Forms.PictureBox();
             this.btnClosed = new System.Windows.Forms.PictureBox();
             this.panelForm = new System.Windows.Forms.Panel();
+            this.btnClean = new System.Windows.Forms.Button();
             this.lbErrorEmail = new System.Windows.Forms.Label();
             this.lbErrorLastName = new System.Windows.Forms.Label();
             this.lbErrorName = new System.Windows.Forms.Label();
@@ -47,7 +48,6 @@
             this.btnDel = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dtgCustomers = new System.Windows.Forms.DataGridView();
-            this.btnClean = new System.Windows.Forms.Button();
             this.panelNavBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClosed)).BeginInit();
@@ -154,7 +154,7 @@
             // btnMinimize
             // 
             this.btnMinimize.Image = global::CRUDApp.Properties.Resources.Minimize_Icon;
-            this.btnMinimize.Location = new System.Drawing.Point(571, 4);
+            this.btnMinimize.Location = new System.Drawing.Point(767, 3);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.Size = new System.Drawing.Size(16, 16);
             this.btnMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -165,7 +165,7 @@
             // btnClosed
             // 
             this.btnClosed.Image = global::CRUDApp.Properties.Resources.Close_Icon;
-            this.btnClosed.Location = new System.Drawing.Point(595, 4);
+            this.btnClosed.Location = new System.Drawing.Point(789, 4);
             this.btnClosed.Name = "btnClosed";
             this.btnClosed.Size = new System.Drawing.Size(16, 16);
             this.btnClosed.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -194,6 +194,21 @@
             this.panelForm.Name = "panelForm";
             this.panelForm.Size = new System.Drawing.Size(808, 233);
             this.panelForm.TabIndex = 16;
+            // 
+            // btnClean
+            // 
+            this.btnClean.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnClean.FlatAppearance.BorderSize = 0;
+            this.btnClean.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClean.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClean.ForeColor = System.Drawing.Color.White;
+            this.btnClean.Location = new System.Drawing.Point(415, 180);
+            this.btnClean.Name = "btnClean";
+            this.btnClean.Size = new System.Drawing.Size(123, 38);
+            this.btnClean.TabIndex = 17;
+            this.btnClean.Text = "Clean";
+            this.btnClean.UseVisualStyleBackColor = false;
+            this.btnClean.Click += new System.EventHandler(this.btnClean_Click);
             // 
             // lbErrorEmail
             // 
@@ -292,21 +307,6 @@
             this.dtgCustomers.Size = new System.Drawing.Size(808, 192);
             this.dtgCustomers.TabIndex = 0;
             this.dtgCustomers.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgCustomers_CellEnter);
-            // 
-            // btnClean
-            // 
-            this.btnClean.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnClean.FlatAppearance.BorderSize = 0;
-            this.btnClean.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClean.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClean.ForeColor = System.Drawing.Color.White;
-            this.btnClean.Location = new System.Drawing.Point(415, 180);
-            this.btnClean.Name = "btnClean";
-            this.btnClean.Size = new System.Drawing.Size(123, 38);
-            this.btnClean.TabIndex = 17;
-            this.btnClean.Text = "Clean";
-            this.btnClean.UseVisualStyleBackColor = false;
-            this.btnClean.Click += new System.EventHandler(this.btnClean_Click);
             // 
             // MainForm
             // 

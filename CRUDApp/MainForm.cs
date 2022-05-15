@@ -264,7 +264,7 @@ namespace CRUDApp
             {
 
                 lbErrorEmail.Text = "The email format is not valid";
-                lbErrorEmail.Visible= true;
+                lbErrorEmail.Visible = true;
             }
           
 
