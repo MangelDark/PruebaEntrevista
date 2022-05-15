@@ -13,5 +13,6 @@ namespace Domain.Layer.Models
         public string  Email { get; set; }
 
 
+
     }
 }

@@ -27,7 +27,7 @@ namespace Crud.Api.Controllers
             {
                 return Ok(result);
             }
-           return BadRequest("Not data.");
+           return Ok("Not data.");
         }
 
         // GET api/<CustomerController>/5
@@ -40,7 +40,7 @@ namespace Crud.Api.Controllers
                 return Ok(result);
 
             }
-            return BadRequest("Not record found");
+            return Ok("Not record found");
         }
 
         // GET api/<CustomerController>/5
@@ -59,7 +59,7 @@ namespace Crud.Api.Controllers
             {
                 if (!ModelState.IsValid)
                 {
-                    return BadRequest(ModelState);
+                    return Ok(ModelState.Values);
                 }
                 service.InsertCustomer(entity);
                 return Ok("Data Inserted.");
@@ -68,7 +68,7 @@ namespace Crud.Api.Controllers
             catch (Exception ex)
             {
 
-                return BadRequest(ex.Message);
+                return Ok(ex.Message);
             }
           
         }
@@ -81,7 +81,7 @@ namespace Crud.Api.Controllers
             {
                 if (!ModelState.IsValid)
                 {
-                    return BadRequest(ModelState);
+                    return Ok(ModelState.Values);
                 }
                 service.UpdateCustomer(entity);
                 return Ok("Data updated.");
@@ -89,7 +89,7 @@ namespace Crud.Api.Controllers
             catch (Exception e)
             {
 
-                return BadRequest(e.Message);
+                return Ok(e.Message);
             }
           
              
@@ -108,7 +108,7 @@ namespace Crud.Api.Controllers
             catch (Exception e)
             {
 
-                return BadRequest(e.Message);
+                return Ok(e.Message);
             }
            
           
